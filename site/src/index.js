@@ -13,7 +13,7 @@ function getQuote() {
 	let num = quoteData.quotes.length;
 	let randQuote = quoteData.quotes[Math.floor(Math.random() * num)];
 	$("#quote-text").text(randQuote.quote);
-	$("#author").text(randQuote.author);
+	$("#author").text("-"+randQuote.author);
 }
 
 $(function() {
