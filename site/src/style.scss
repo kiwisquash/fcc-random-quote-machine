@@ -1,0 +1,17 @@
+$title-font-size: 35px;
+$subtitle-font-size: .4*$title-font-size;
+
+#title {
+	font-size: $title-font-size;
+}
+
+#subtitle {
+	display: block;
+	font-size: $subtitle-font-size;
+	line-height: 1.5*$subtitle-font-size;
+}
+
+#quote-box {
+	max-width: 400px;
+}
+
