@@ -43,9 +43,15 @@ $(function() {
 
 // Sent out the tweet on click.	
 	const tweet = "https://twitter.com/intent/tweet?text=";
-	$("#tweet-quote").click(function(){
+	$("#tweet-quote").click(function(event){
 		let quote = $("#text").text();
 		let author = $("#author").text();
-		$("#tweet-quote").attr("href",tweet + quote + "%20%0D"+ author);
+		if (quote.length + author.length < 141) {
+			// quote = quote.replace(";","%3B");
+			$("#tweet-quote").attr("href",tweet + quote + "%20%0D"+ author);
+		} else {
+			alert("This quote is too long to tweet. Please generate a new quote.");
+			event.preventDefault();
+		}
 	})
 });
