@@ -47,7 +47,7 @@ $(function() {
 		let quote = $("#text").text();
 		let author = $("#author").text();
 		if (quote.length + author.length < 141) {
-			// quote = quote.replace(";","%3B");
+			quote = quote.replace(";","%3B");
 			$("#tweet-quote").attr("href",tweet + quote + "%20%0D"+ author);
 		} else {
 			alert("This quote is too long to tweet. Please generate a new quote.");
