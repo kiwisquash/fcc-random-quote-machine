@@ -3,13 +3,13 @@ main, #text > *, #title, footer {
 }
 
 #title {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 #subtitle {
   display: block;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 13.5px;
+  line-height: 20.25px;
 }
 
 #quote-box {
