@@ -16,14 +16,30 @@ function getQuote() {
 	$("#author").text("-"+randQuote.author);
 }
 
-$(function() {
-	getQuotes().then(
+getQuotes().then(
 		()=>{
 			getQuote();
+			$("#author").hide();
 		}
 	);	
 
-	$("#new-quote").click(getQuote);
+$(function() {
+	$("#subtitle").fadeIn("slow");
+	$("#title, #subtitle").fadeIn("slow",function() {
+		$("main").slideDown("slow", function() {
+			$("footer").fadeIn("slow", function() {
+				$("#text > *, #author").slideDown("slow")
+			})
+		})
+	});
+
+
+	$("#new-quote").click(function() {
+		$("#text > *, #author").slideUp("slow",function(){
+			getQuote();
+		  $("#text > *, #author").slideDown("slow");
+		}).delay(300);
+	});
 
 // Sent out the tweet on click.	
 	const tweet = "https://twitter.com/intent/tweet?text=";
